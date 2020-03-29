@@ -1,0 +1,39 @@
+{
+  "manifest": {
+    "name": "speedometer",
+    "version": "0.1.4",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/mafintosh/speedometer"
+    },
+    "description": "simple speed measurement in javascript",
+    "keywords": [
+      "speed",
+      "bytes",
+      "per",
+      "second",
+      "transfer"
+    ],
+    "author": {
+      "name": "Mathias Buus Madsen",
+      "email": "mathiasbuus@gmail.com"
+    },
+    "_registry": "npm",
+    "_loc": "/home/zero/.hyper_plugins/cache/v1/npm-speedometer-0.1.4-9876dbd2a169d3115402d48e6ea6329c8816a50d/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# speedometer\n\nSpeed measurement in Javascript\n\n```\nnpm install speedometer\n```\n\n## Usage\n\n``` js\nvar speedometer = require('speedometer')\nvar fs = require('fs')\n\n// Let's measure how fast we can read from /dev/urandom\nvar speed = speedometer()\nvar stream = fs.createReadStream('/dev/urandom')\n\nstream.on('data', function(data) {\n  // Simply call speed with the amount of bytes transferred\n  var bytesPerSecond = speed(data.length)\n\n  console.log(bytesPerSecond+' bytes/second')\n})\n```\n\nYou can always get the current speed by calling `speed()`.\n\nPer default `speedometer` uses a 5 second buffer.\nTo change this simply pass another value to the constructor\n\n``` js\nvar speed = speedometer(20) // uses a 20s buffer instead\n```\n\n## License\n\nMIT\n",
+    "licenseText": "Copyright 2013 Mathias Buus\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+    "license": "MIT"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/speedometer/-/speedometer-0.1.4.tgz#9876dbd2a169d3115402d48e6ea6329c8816a50d",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/speedometer/-/speedometer-0.1.4.tgz",
+    "hash": "9876dbd2a169d3115402d48e6ea6329c8816a50d",
+    "registry": "npm",
+    "packageName": "speedometer"
+  },
+  "registry": "npm",
+  "hash": "9876dbd2a169d3115402d48e6ea6329c8816a50d"
+}

@@ -1,0 +1,41 @@
+{
+  "manifest": {
+    "name": "hyper-mac-controls",
+    "version": "1.1.2",
+    "description": "Hyper mac-like window controls on linux or windows",
+    "main": "index.js",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/krve/hyper-mac-controls.git"
+    },
+    "keywords": [
+      "hyper",
+      "hyperterm",
+      "hyper-plugin",
+      "hyperterm-plugin",
+      "plugin",
+      "mac"
+    ],
+    "author": {
+      "name": "Kristoffer",
+      "email": "kristoffer@krve.io"
+    },
+    "license": "MIT",
+    "_registry": "npm",
+    "_loc": "/home/zero/.hyper_plugins/cache/v1/npm-hyper-mac-controls-1.1.2-c963f529007aa731bf9681326e5898fee264c48d/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# Hyper-mac-controls! [![npm-version][npm-badge]][npm-link]\n\nA plugin that makes the close, minimize and maximize buttons look like the macOS window controls. This plugin is tested in both linux and windows.\n\n![hyper-mac-controls][screenshot]\n\n### Install\n\n**Hyper store**:  \nInstall using `hyper i hyper-mac-controls`\n\n**Manually**:  \n1. Open Hyper preferences (or edit them manually at `~/.hyper.js`  with your editor).\n2. Update your list of plugins to include hyper-mac-controls, like so:\n```javascript\nplugins: [\n\t'hyper-mac-controls'\n],\n```\n3. Reload (`Ctrl+Shift+R`) or restart Hyper\n\n### Config\n\nIt makes use of `showWindowControls` to determine where to place the controls.\n\n**Flip controls**\nDefault vallue is `true`\n\n```javascript\nmodule.exports = {\n  config: {\n    ...\n      hyperMacControls: {\n        flipped: true,\n      }\n    ...\n  }\n}\n```\n\n### Changelog\n**1.1.2**\n- Add flipped versions again (see config option above)\n\n**1.1.0**\n- Update to work with Hyper 2.0\n- Remove flipped versions (they are on my todo)\n- Remove package specific config options and make use of `showWindowControls` instead.\n\n**1.0.4**\n- Add left and right-flipped options\n\n### License\n\nMIT © [krve][author]\n\n[screenshot]: https://cloud.githubusercontent.com/assets/5139119/21655977/766986e0-d2bc-11e6-8182-fd48c55c4416.png\n[npm-badge]:  https://img.shields.io/npm/v/hyper-mac-controls.svg?style=flat-square\n[npm-link]:   https://www.npmjs.com/package/hyper-mac-controls\n[author]:     https://github.com/krve\n",
+    "licenseText": "MIT License\n\nCopyright (c) 2019 Kristoffer Vestergaard\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/hyper-mac-controls/-/hyper-mac-controls-1.1.2.tgz#c963f529007aa731bf9681326e5898fee264c48d",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/hyper-mac-controls/-/hyper-mac-controls-1.1.2.tgz",
+    "hash": "c963f529007aa731bf9681326e5898fee264c48d",
+    "registry": "npm",
+    "packageName": "hyper-mac-controls"
+  },
+  "registry": "npm",
+  "hash": "c963f529007aa731bf9681326e5898fee264c48d"
+}

@@ -1,0 +1,17 @@
+{
+  "manifest": {
+    "name": "convert-css-color-name-to-hex",
+    "version": "0.1.1"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/convert-css-color-name-to-hex/-/convert-css-color-name-to-hex-0.1.1.tgz#38ac4d27ca470593fd663b18a072a308926a35a2",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/convert-css-color-name-to-hex/-/convert-css-color-name-to-hex-0.1.1.tgz",
+    "hash": "38ac4d27ca470593fd663b18a072a308926a35a2",
+    "registry": "npm",
+    "packageName": "convert-css-color-name-to-hex"
+  },
+  "registry": "npm",
+  "hash": "38ac4d27ca470593fd663b18a072a308926a35a2"
+}

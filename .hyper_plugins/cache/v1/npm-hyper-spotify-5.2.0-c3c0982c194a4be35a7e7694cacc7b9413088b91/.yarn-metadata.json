@@ -1,0 +1,93 @@
+{
+  "manifest": {
+    "name": "hyper-spotify",
+    "version": "5.2.0",
+    "description": "Add a Spotify controller to Hyper.",
+    "keywords": [
+      "hyperterm",
+      "hyper",
+      "spotify",
+      "hyper-spotify"
+    ],
+    "os": [
+      "!win32"
+    ],
+    "author": {
+      "name": "Mattia Panzeri",
+      "email": "mattia.panzeri93@gmail.com"
+    },
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/panz3r/hyper-spotify"
+    },
+    "bugs": {
+      "url": "https://github.com/panz3r/hyper-spotify/issues"
+    },
+    "homepage": "https://github.com/panz3r/hyper-spotify#readme",
+    "main": "index.js",
+    "files": [
+      "dist"
+    ],
+    "scripts": {
+      "lint": "standard './src/**.js' | snazzy",
+      "prebuild": "yarn lint && rimraf ./dist",
+      "build": "babel ./src --out-dir ./dist --copy-files",
+      "build:watch": "babel --watch ./src --out-dir ./dist --source-maps --copy-files",
+      "prepublishOnly": "yarn build"
+    },
+    "dependencies": {
+      "@babel/runtime-corejs2": "^7.4.5",
+      "dbus-native": "^0.2.3",
+      "lodash": "^4.17.11",
+      "opn": "^5.4.0",
+      "spotify-node-applescript": "^1.0.0"
+    },
+    "devDependencies": {
+      "@babel/cli": "^7.0.0",
+      "@babel/core": "^7.0.0",
+      "@babel/plugin-proposal-class-properties": "^7.0.0",
+      "@babel/plugin-proposal-decorators": "^7.0.0",
+      "@babel/plugin-proposal-do-expressions": "^7.0.0",
+      "@babel/plugin-proposal-export-default-from": "^7.0.0",
+      "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+      "@babel/plugin-proposal-function-bind": "^7.0.0",
+      "@babel/plugin-proposal-function-sent": "^7.0.0",
+      "@babel/plugin-proposal-json-strings": "^7.0.0",
+      "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
+      "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+      "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+      "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+      "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
+      "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+      "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+      "@babel/plugin-syntax-import-meta": "^7.0.0",
+      "@babel/plugin-transform-runtime": "^7.0.0",
+      "@babel/preset-env": "^7.0.0",
+      "@babel/preset-react": "^7.0.0",
+      "babel-eslint": "^9.0.0",
+      "rimraf": "^2.6.3",
+      "snazzy": "^8.0.0",
+      "standard": "12.0.1"
+    },
+    "standard": {
+      "parser": "babel-eslint"
+    },
+    "_registry": "npm",
+    "_loc": "/home/zero/.hyper_plugins/cache/v1/npm-hyper-spotify-5.2.0-c3c0982c194a4be35a7e7694cacc7b9413088b91/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# hyper-spotify [![npm](https://img.shields.io/npm/v/hyper-spotify.svg)](https://www.npmjs.com/package/hyper-spotify)\n\n[![License](https://img.shields.io/github/license/panz3r/hyper-spotify.svg)](LICENSE.md)\n[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)\n[![hyper](https://img.shields.io/badge/Hyper-v1.3.3-brightgreen.svg)](https://github.com/zeit/hyper/releases/tag/1.3.3)\n[![npm](https://img.shields.io/npm/dm/hyper-spotify.svg)](https://www.npmjs.com/package/hyper-spotify)\n\n[![Build Status](https://travis-ci.org/panz3r/hyper-spotify.svg)](https://travis-ci.org/panz3r/hyper-spotify)\n[![GitHub issues](https://img.shields.io/github/issues/panz3r/hyper-spotify.svg)](https://github.com/panz3r/hyper-spotify/issues)\n\n> Spotify plugin for [Hyper](https://hyper.is). <br>\nDisplay currently playing song on [Spotify](https://www.spotify.com) at the bottom of the terminal and allows you to control your favourite music\n\n![hyper-spotify](art/preview.png)\n\n## Installation\nSimply add this plugin inside `~/.hyper.js` and enjoy your music :musical_note:\n```js\nmodule.exports = {\n  ...\n  plugins: ['hyper-spotify']\n  ...\n}\n```\n\n<br />\n\n## Configuration\nIn your `~/.hyper.js` you can define the following parameters to customize `hyper-spotify` appearance\n```js\nmodules.exports = {\n  config: {\n    ...\n    hyperSpotify: {\n      position: 'top', // or 'bottom'\n      margin: 'default', // or 'double' or custom value\n      controlsPosition: 'default', // or 'left' or 'right'\n    },\n    ...\n  },\n  ... \n};\n```\n\n### Position\n`hyper-spotify bar` supports 2 different positioning: \n- `top`\n- `bottom` (default)\n\n### Margin\n`hyper-spotify bar` supports 3 margin options:\n- `default`, should work most of the times\n- `double`, when using other bar plugins (such as `hyper-statusline` or `hyperline`)\n- custom value, specify a custom margin value as an interger (e.g. 30)\n\n### Controls position\n`hyper-spotify controls` support 3 different positioning: \n- `default`, controls appears just before the song details\n- `left`, controls are fixed to the left side of Hyper window\n- `right`, controls are fixed to the right side of Hyper window\n\n### Theme\n`hyper-spotify` support different themes:\n- `default`, A light theme with a `Spotify Green` (`#1ED760`) Spotify icon\n- `light`, An white theme suitable for dark `hyper` themes\n- `dark`, A deep-black theme suitable for light `hyper` themes\n- special event themes (look for them if you really want to :stuck_out_tongue_winking_eye:)\n- `custom`, A customizable theme (see below for more options)\n\n#### Custom Theme\nIf you'd like to give a personal touch to `hyper-spotify`, you can use a custom `theme` and specify one or more of the theme colors\n- `overlayColor`, the color to apply to `hyper-spotify` bar background, defaults to `white` (`#FFF`)\n- `iconColor`, the color for every actionable icon, defaults to `white` (`#FFF`)\n- `spotifyIconColor`, the color for the Spotify icon (visible when `Spotify` app is not running), defaults to `iconColor` (if specified) or to `Spotify Green` (`#1ED760`)\n- `textColor`, track info color, defaults to `white` (`#FFF`)\n\n<br />\n\nCustom theme sample configuration, edit your `~/.hyper.js`\n```js\nmodules.exports = {\n  config: {\n    ...\n    hyperSpotify: {\n      ...\n      theme: 'custom', // important!\n      overlayColor: '#000',\n      iconColor: '#D75C1B',\n      spotifyIconColor: '#1ED760',\n      textColor: '#FFF'\n    },\n    ...\n  },\n  ... \n};\n```\n\n<br />\n\n## Limitations\nCurrently works only on `macOS`, `Linux` (Tested on Ubuntu 17.04).\n\n## Troubleshooting\n\n### Can't load `hyper-spotify`\nUnfortunately this seems to be a common issue with `Hyper` plugins (see here [zeit/hyper#191](https://github.com/zeit/hyper/issues/191))\n\nAfter installing `hyper-spotify` if `Hyper` complains about an error while enabling the plugin:\n- do a full restart of `Hyper` app\n\nif even after restaring the issue persists try running the following command\n```bash\n$ cd ~/.hyper_plugins && npm install\n```\n\n### `abstract-socket` module error\nIf you get an error related to `abstract-socket` not being compiled with the correct Node version, you can try the following solution:\n- Retrieve `Hyper` electron version by running `process.versions.electron` inside Hyper DevTools console\n- Run `~/.hyper_plugins/node_modules/.bin/electron-rebuild -v [output of process.versions.electron]` inside the terminal\n\nFor more details see [issue #13](https://github.com/panz3r/hyper-spotify/issues/13#issuecomment-453855958).\n\n<br />\n\n## Related Projects\n\nIf you found this plugin of your interest or if you need to control other media players be sure to check out\n[`hyper-media-control`](https://github.com/OrionNebula/hyper-media-control) by [@OrionNebula](https://github.com/OrionNebula)\n\n## Credits\n\nThis plugin is inspired by [`atom-spotify2`](https://github.com/albertorestifo/atom-spotify2) and relies on \n- [`spotify-node-applescript`](https://github.com/andrehaveman/spotify-node-applescript) on macOS\n- [`node-dbus`](https://github.com/sidorares/node-dbus) on Linux\n\nto interact with [Spotify](https://www.spotify.com) client\n\n## Special Thanks\n\n- [@OrionNebula](https://github.com/OrionNebula) for `Windows` support initial implementation.\n\n---\n\nMade with :sparkles: & :heart: by [Mattia Panzeri](https://github.com/panz3r) and [contributors](https://github.com/panz3r/hyper-spotify/graphs/contributors)\n\nIf you found this project to be helpful, please consider buying me a coffee.\n\n[![buy me a coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoff.ee/4f18nT0Nk)\n",
+    "licenseText": "MIT License\n\nCopyright (c) 2017 Mattia Panzeri\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/hyper-spotify/-/hyper-spotify-5.2.0.tgz#c3c0982c194a4be35a7e7694cacc7b9413088b91",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/hyper-spotify/-/hyper-spotify-5.2.0.tgz",
+    "hash": "c3c0982c194a4be35a7e7694cacc7b9413088b91",
+    "registry": "npm",
+    "packageName": "hyper-spotify"
+  },
+  "registry": "npm",
+  "hash": "c3c0982c194a4be35a7e7694cacc7b9413088b91"
+}

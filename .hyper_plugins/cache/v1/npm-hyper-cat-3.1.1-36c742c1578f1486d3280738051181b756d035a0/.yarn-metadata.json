@@ -1,0 +1,45 @@
+{
+  "manifest": {
+    "name": "hyper-cat",
+    "version": "3.1.1",
+    "description": "Turn your Hyper terminal into nyan cat while typing.",
+    "author": {
+      "name": "Aaron Hardy"
+    },
+    "license": "MIT",
+    "keywords": [
+      "hyper",
+      "hyper.app",
+      "nyan",
+      "cat"
+    ],
+    "dependencies": {
+      "color": "0.11.3"
+    },
+    "main": "index.js",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Aaronius/hyper-cat.git"
+    },
+    "bugs": {
+      "url": "https://github.com/Aaronius/hyper-cat/issues"
+    },
+    "homepage": "https://github.com/Aaronius/hyper-cat#readme",
+    "_registry": "npm",
+    "_loc": "/home/zero/.hyper_plugins/cache/v1/npm-hyper-cat-3.1.1-36c742c1578f1486d3280738051181b756d035a0/package.json",
+    "readmeFilename": "README.md",
+    "readme": "Turn your [Hyper](https://hyper.is/) terminal into nyan cat while typing. Audio included!\n\n![Screen Capture](capture.gif?raw=true \"Screen Capture\")\n\nTo install, edit `~/.hyper.js` and add `hyper-cat` to `plugins`:\n\n```js\nmodule.exports = {\n  ...\n  plugins: [\n    \"hyper-cat\"\n  ]\n  ...\n};\n```\n\nYou may then need to reload your terminal.\n\n## Configuration\n\nConfiguration can by applied by editing `~/.hyper.js` as follows:\n\n```js\nmodule.exports = {\n  config: {\n    ...\n    hyperCat: {\n      // The number of pixels the cat and rainbow should jump up and down.\n      staggerHeight: 2, \n      // The max opacity of the rainbow.\n      rainbowMaxAlpha: 1, \n      // Whether audio should play while typing.\n      audioEnabled: true, \n      // Whether the cat is always active instead of only while typing.\n      alwaysActive: false \n    }\n    ...\n  }\n}\n```\n",
+    "licenseText": "Copyright 2017 Aaron Hardy\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/hyper-cat/-/hyper-cat-3.1.1.tgz#36c742c1578f1486d3280738051181b756d035a0",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/hyper-cat/-/hyper-cat-3.1.1.tgz",
+    "hash": "36c742c1578f1486d3280738051181b756d035a0",
+    "registry": "npm",
+    "packageName": "hyper-cat"
+  },
+  "registry": "npm",
+  "hash": "36c742c1578f1486d3280738051181b756d035a0"
+}

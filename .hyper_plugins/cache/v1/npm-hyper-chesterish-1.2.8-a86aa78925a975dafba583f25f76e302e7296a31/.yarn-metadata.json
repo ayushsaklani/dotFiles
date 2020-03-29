@@ -1,0 +1,44 @@
+{
+  "manifest": {
+    "name": "hyper-chesterish",
+    "version": "1.2.8",
+    "description": "Chesterish Theme for Hyper",
+    "main": "index.js",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/henrikdahl/hyper-chesterish.git"
+    },
+    "author": {
+      "name": "Henrik Dahlheim",
+      "email": "henrik.dahlheim@gmail.com"
+    },
+    "files": [
+      "index.js"
+    ],
+    "keywords": [
+      "hyper",
+      "hyper-theme",
+      "hyperterm",
+      "hyperterm-theme",
+      "chesterish",
+      "hyper-chesterish"
+    ],
+    "_registry": "npm",
+    "_loc": "/home/zero/.hyper_plugins/cache/v1/npm-hyper-chesterish-1.2.8-a86aa78925a975dafba583f25f76e302e7296a31/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "# hyper-chesterish  [![npm](https://img.shields.io/npm/v/hyper-chesterish.svg?maxAge=86400?style=flat-square)](https://www.npmjs.com/package/hyper-chesterish) [![npm](https://img.shields.io/npm/dm/hyper-chesterish.svg?maxAge=86400?style=flat-square)](https://www.npmjs.com/package/hyper-chesterish)\n\n> Chesterish Theme for [Hyper](https://hyper.is) based on [Jupyter](https://github.com/dunovank/jupyter-themes) schemes.\n\n![hyper-chesterish](https://cloud.githubusercontent.com/assets/1430576/21888813/3c806682-d8c6-11e6-845d-ca903b6823e8.png)\n![hyper-chesterish-tabs](https://cloud.githubusercontent.com/assets/1430576/21888817/3ef51610-d8c6-11e6-85d9-f0eabd1ee5a2.png)\n\n\n## Install\n\nAdd `hyper-chesterish` to the plugins array in your `~/.hyper.js` config.\n\n\n## Plugins\n\n* [hyper-tabs-enhanced](https://github.com/henrikdahl/hyper-tabs-enhanced)\n* [hyper-statusline](https://github.com/henrikdahl/hyper-statusline)\n\n\n## Other\n\n* [hyper-oceans16](https://github.com/henrikdahl/hyper-oceans16)\n\n\n## License\n\nMIT © Henrik\n",
+    "licenseText": "MIT License\n\nCopyright (c) 2016 Henrik Ruscon\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/hyper-chesterish/-/hyper-chesterish-1.2.8.tgz#a86aa78925a975dafba583f25f76e302e7296a31",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/hyper-chesterish/-/hyper-chesterish-1.2.8.tgz",
+    "hash": "a86aa78925a975dafba583f25f76e302e7296a31",
+    "registry": "npm",
+    "packageName": "hyper-chesterish"
+  },
+  "registry": "npm",
+  "hash": "a86aa78925a975dafba583f25f76e302e7296a31"
+}

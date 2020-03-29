@@ -1,0 +1,40 @@
+{
+  "manifest": {
+    "name": "hyper-aww",
+    "version": "1.1.0",
+    "description": "Cute animal gifs as your terminal background",
+    "main": "index.js",
+    "scripts": {},
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/stokingerl/hyper-aww.git"
+    },
+    "keywords": [
+      "hyper",
+      "aww",
+      "cute",
+      "animals"
+    ],
+    "author": {
+      "name": "stokingerl",
+      "email": "liamstokinger@gmail.com"
+    },
+    "license": "MIT",
+    "_registry": "npm",
+    "_loc": "/home/zero/.hyper_plugins/cache/v1/npm-hyper-aww-1.1.0-61eee055cf537af0b6b0ff563c93ca117dd17b69/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# hyper-aww\nHyper plug in for a random cute animal gif as your terminal background.\n\nNow shows a new gif with each window! (v1.1.0)\n\n![Demo](https://media.giphy.com/media/l2JhKIyusyzlMyz5K/giphy.gif)\n\n# Install\nInstall [Hyper](https://hyper.is)\n\nThen, add `'hyper-aww'` to the plugins list in `~/.hyper.js`:\n\n```javascript\nplugins: [\n  'hyper-aww'\n]\n````\n",
+    "licenseText": "MIT License\n\nCopyright (c) 2016 stokingerl\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/hyper-aww/-/hyper-aww-1.1.0.tgz#61eee055cf537af0b6b0ff563c93ca117dd17b69",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/hyper-aww/-/hyper-aww-1.1.0.tgz",
+    "hash": "61eee055cf537af0b6b0ff563c93ca117dd17b69",
+    "registry": "npm",
+    "packageName": "hyper-aww"
+  },
+  "registry": "npm",
+  "hash": "61eee055cf537af0b6b0ff563c93ca117dd17b69"
+}

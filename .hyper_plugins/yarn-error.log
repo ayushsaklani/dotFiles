@@ -1,0 +1,43 @@
+Arguments: 
+  /tmp/.mount_hyper-QB29Cm/hyper /tmp/.mount_hyper-QB29Cm/resources/bin/yarn-standalone.js install --no-emoji --no-lockfile --cache-folder /home/zero/.hyper_plugins/cache
+
+PATH: 
+  undefined
+
+Yarn version: 
+  1.3.2
+
+Node version: 
+  10.2.0
+
+Platform: 
+  linux x64
+
+npm manifest: 
+  {
+    "name": "hyper-plugins",
+    "description": "Auto-generated from `~/.hyper.js`!",
+    "private": true,
+    "version": "0.0.1",
+    "repository": "zeit/hyper",
+    "license": "MIT",
+    "homepage": "https://hyper.is",
+    "dependencies": {
+      "hyper-startup": "latest",
+      "hyperborder": "latest",
+      "hyper-tab-icons": "latest",
+      "hyperpower": "latest",
+      "git-falcon9": "latest",
+      "hyper-spotify": "latest",
+      "hyper-night-owl": "latest"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile '/home/zero/.hyper_plugins/cache/v1/npm-abstract-socket-2.1.0-a57193dbbf585991b0dc811d7b18e053ff846f8a/.jshintrc' -> '/home/zero/.hyper_plugins/node_modules/abstract-socket/.jshintrc'

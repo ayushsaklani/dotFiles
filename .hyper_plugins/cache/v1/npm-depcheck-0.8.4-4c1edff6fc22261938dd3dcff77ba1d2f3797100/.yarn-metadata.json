@@ -1,0 +1,125 @@
+{
+  "manifest": {
+    "name": "depcheck",
+    "version": "0.8.4",
+    "description": "Check dependencies in your node module",
+    "main": "dist/index.js",
+    "engines": {
+      "node": ">=6"
+    },
+    "bin": {
+      "depcheck": "bin/depcheck.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/depcheck/depcheck.git"
+    },
+    "scripts": {
+      "component": "node -r @babel/register ./build/component.js > ./dist/component.json",
+      "compile": "babel src/ -d dist/",
+      "depcheck": "node ./bin/depcheck.js --ignore-dirs=fake_modules",
+      "depcheck-json": "node ./bin/depcheck.js --ignore-dirs=fake_modules --json | node -r @babel/register ./build/check-json",
+      "prepublishOnly": "npm run compile && npm run component",
+      "lint": "eslint ./src ./build",
+      "test": "node -r @babel/register node_modules/mocha/bin/_mocha ./test ./test/special --timeout 10000",
+      "test-dependent": "dependent-build",
+      "test-coverage": "node -r @babel/register node_modules/cross-env/src/bin/cross-env.js NODE_ENV=test nyc mocha ./test ./test/special --timeout 20000 && nyc report --reporter=text-lcov > ./coverage/coverage.lcov"
+    },
+    "author": {
+      "name": "Djordje Lukic",
+      "email": "lukic.djordje@gmail.com"
+    },
+    "contributors": [
+      {
+        "name": "Junle Li",
+        "email": "lijunle@gmail.com"
+      }
+    ],
+    "keywords": [
+      "check",
+      "unused",
+      "package",
+      "packages",
+      "depcheck",
+      "dependency",
+      "dependencies",
+      "devDependencies"
+    ],
+    "license": "MIT",
+    "readmeFilename": "README.md",
+    "dependencies": {
+      "@babel/parser": "^7.6.4",
+      "@babel/traverse": "^7.6.3",
+      "builtin-modules": "^3.0.0",
+      "deprecate": "^1.1.1",
+      "deps-regex": "^0.1.4",
+      "js-yaml": "^3.4.2",
+      "lodash": "^4.17.15",
+      "minimatch": "^3.0.2",
+      "node-sass-tilde-importer": "^1.0.2",
+      "please-upgrade-node": "^3.2.0",
+      "require-package-name": "^2.0.1",
+      "resolve": "^1.12.0",
+      "vue-template-compiler": "^2.6.10",
+      "walkdir": "^0.4.1",
+      "yargs": "^14.2.0"
+    },
+    "devDependencies": {
+      "@babel/cli": "^7.6.4",
+      "@babel/core": "^7.6.4",
+      "@babel/plugin-transform-object-assign": "^7.2.0",
+      "@babel/polyfill": "^7.6.0",
+      "@babel/preset-env": "^7.6.3",
+      "@babel/register": "^7.6.2",
+      "babel-eslint": "^10.0.3",
+      "babel-plugin-add-module-exports": "^1.0.0",
+      "babel-plugin-istanbul": "^5.2.0",
+      "codecov": "^3.6.1",
+      "cross-env": "^6.0.3",
+      "dependent-build": "^0.1.2",
+      "eslint": "^6.6.0",
+      "eslint-config-airbnb": "^18.0.1",
+      "eslint-plugin-import": "^2.18.2",
+      "eslint-plugin-jsx-a11y": "^6.1.1",
+      "eslint-plugin-react": "^7.16.0",
+      "fs-extra": "^8.1.0",
+      "mocha": "^6.2.2",
+      "node-sass": "^4.13.0",
+      "nyc": "^14.1.0",
+      "patch-version": "^0.1.1",
+      "proxyquire": "^2.1.3",
+      "should": "^13.2.3"
+    },
+    "nyc": {
+      "sourceMap": false,
+      "instrument": false,
+      "exclude": [
+        "dist",
+        "test"
+      ],
+      "require": [
+        "@babel/polyfill",
+        "@babel/register"
+      ],
+      "reporter": [
+        "html",
+        "text"
+      ]
+    },
+    "_registry": "npm",
+    "_loc": "/home/zero/.hyper_plugins/cache/v1/npm-depcheck-0.8.4-4c1edff6fc22261938dd3dcff77ba1d2f3797100/package.json",
+    "readme": "# depcheck\n\nDepcheck is a tool for analyzing the dependencies in a project to see: how each dependency is used, which dependencies are useless, and which dependencies are missing from `package.json`.\n\n## Status\n\n[![Build Status](https://travis-ci.org/depcheck/depcheck.svg?branch=master)](https://travis-ci.org/depcheck/depcheck)\n[![Build status](https://ci.appveyor.com/api/projects/status/xbooh370dinuyi0y/branch/master?svg=true)](https://ci.appveyor.com/project/lijunle/depcheck/branch/master)\n[![codecov.io](https://codecov.io/github/depcheck/depcheck/coverage.svg?branch=master)](https://codecov.io/github/depcheck/depcheck?branch=master)\n\n[![dependencies Status](https://david-dm.org/depcheck/depcheck/status.svg)](https://david-dm.org/depcheck/depcheck)\n[![devDependencies Status](https://david-dm.org/depcheck/depcheck/dev-status.svg)](https://david-dm.org/depcheck/depcheck?type=dev)\n\n## Installation\n\n```\nnpm install -g depcheck\n```\n\n*Notice:* depcheck needs node.js >= 6.\n\n## Syntax Support\n\nDepcheck not only recognizes the dependencies in JavaScript files, but also supports these syntaxes:\n\n- JavaScript (ES5, ES6 and ES7)\n- [React JSX](http://facebook.github.io/react/docs/jsx-in-depth.html)\n- [CoffeeScript](http://coffeescript.org/)\n- [Typescript](http://www.typescriptlang.org/) (with `typescript` dependency)\n- [SASS and SCSS](http://sass-lang.com/) (with `node-sass` dependency)\n- [Vue.js](https://vuejs.org/) (with `vue-template-compiler` dependency)\n\nTo get the syntax support by external dependency, please install the corresponding package explicitly. For example, for Typescript user, install depcheck with `typescript` package:\n\n```\nnpm install -g depcheck typescript\n```\n\n## Special\n\nThe *special* component is used to recognize the dependencies that are not generally used in the above syntax files. The following scenarios are supported by specials:\n\n- `bin` - Dependencies used in npm commands, Travis scripts or other CI scripts\n- `eslint` - [ESLint](https://www.npmjs.com/package/eslint) configuration presets, parsers and plugins\n- `tslint` - [TSLint](https://www.npmjs.com/package/tslint) configuration presets, parsers and plugins\n- `webpack` - [Webpack](https://www.npmjs.com/package/webpack) loaders\n- `babel` - [Babel](https://www.npmjs.com/package/babel) presets and plugins\n- [Grunt](https://www.npmjs.com/package/grunt) plugins\n- `feross-standard` - [Feross standard](https://www.npmjs.com/package/standard) format parser\n- `mocha` - [Mocha](https://www.npmjs.com/package/mocha) explicit required dependencies\n- `jest` - [Jest](https://www.npmjs.com/package/jest) properties in [Jest Configuration](https://jestjs.io/docs/en/configuration)\n- `commitizen` - [Commitizen](https://www.npmjs.com/package/commitizen) configuration adaptor\n- `gulp-load-plugins` - [Gulp-load-plugins](https://www.npmjs.com/package/gulp-load-plugins) lazy loaded plugins\n- `gatsby` - [Gatsby](https://www.npmjs.com/package/gatsby) configuration parser\n\nThe logic of a special is not perfect. There might be [false alerts](#false-alert). If this happens, please open an issue for us.\n\n## Usage\n\n```\ndepcheck [directory] [arguments]\n```\n\nThe `directory` argument is the root directory of your project (where the `package.json` file is). If unspecified, defaults to current directory.\n\nAll of the arguments are optional:\n\n`--ignore-bin-package=[true|false]`: A flag to indicate if depcheck ignores the packages containing bin entry. The default value is `false`.\n\n`--skip-missing=[true|false]`: A flag to indicate if depcheck skips calculation of missing dependencies. The default value is `false`.\n\n`--json`: Output results in JSON. When not specified, depcheck outputs in human friendly format.\n\n`--ignores`: A comma separated array containing package names to ignore. It can be glob expressions. Example, `--ignores=\"eslint,babel-*\"`.\n\n`--ignore-dirs`: A comma separated array containing directory names to ignore. Example, `--ignore-dirs=dist,coverage`.\n\n`--help`: Show the help message.\n\n`--parsers`, `--detectors` and `--specials`: These arguments are for advanced usage. They provide an easy way to customize the file parser and dependency detection. Check [the pluggable design document](https://github.com/depcheck/depcheck/blob/master/doc/pluggable-design.md) for more information.\n\n### Deprecated arguments\n\nThe following arguments are deprecated and will be removed in next major version:\n\n`--dev=[true|false]`: *[DEPRECATED]* It leads a wrong result for missing dependencies when it is `false`. This option will be enforced to `true` in next major version. The corresponding API option `withoutDev` is deprecated too.\n\n## API\n\nSimilar options are provided to `depcheck` function for programming:\n\n```js\nimport depcheck from 'depcheck';\n\nconst options = {\n  withoutDev: false, // [DEPRECATED] check against devDependencies\n  ignoreBinPackage: false, // ignore the packages with bin entry\n  skipMissing: false, // skip calculation of missing dependencies\n  ignoreDirs: [ // folder with these names will be ignored\n    'sandbox',\n    'dist',\n    'bower_components'\n  ],\n  ignoreMatches: [ // ignore dependencies that matches these globs\n    'grunt-*'\n  ],\n  parsers: { // the target parsers\n    '*.js': depcheck.parser.es6,\n    '*.jsx': depcheck.parser.jsx\n  },\n  detectors: [ // the target detectors\n    depcheck.detector.requireCallExpression,\n    depcheck.detector.importDeclaration\n  ],\n  specials: [ // the target special parsers\n    depcheck.special.eslint,\n    depcheck.special.webpack\n  ],\n};\n\ndepcheck('/path/to/your/project', options, (unused) => {\n  console.log(unused.dependencies); // an array containing the unused dependencies\n  console.log(unused.devDependencies); // an array containing the unused devDependencies\n  console.log(unused.missing); // a lookup containing the dependencies missing in `package.json` and where they are used\n  console.log(unused.using); // a lookup indicating each dependency is used by which files\n  console.log(unused.invalidFiles); // files that cannot access or parse\n  console.log(unused.invalidDirs); // directories that cannot access\n});\n```\n\n## Example\n\nThe following example checks the dependencies under `/path/to/my/project` folder:\n\n```sh\n$> depcheck /path/to/my/project\nUnused dependencies\n* underscore\nUnused devDependencies\n* jasmine\nMissing dependencies\n* lodash\n```\n\nIt figures out:\n\n- The dependency `underscore` is declared in the `package.json` file, but not used by any code.\n- The devDependency `jasmine` is declared in the `package.json` file, but not used by any code.\n- The dependency `lodash` is used somewhere in the code, but not declared in the `package.json` file.\n\nPlease note that, if a subfolder has a `package.json` file, it is considered another project and should be checked with another depcheck command.\n\nThe following example checks the same project, however, outputs as a JSON blob. Depcheck's JSON output is in one single line for easy pipe and computation. The [`json`](https://www.npmjs.com/package/json) command after the pipe is a node.js program to beautify the output.\n\n```js\n$> depcheck /path/to/my/project --json | json\n{\n  \"dependencies\": [\n    \"underscore\"\n  ],\n  \"devDependencies\": [\n    \"jasmine\"\n  ],\n  \"missing\": {\n    \"lodash\": [\n      \"/path/to/my/project/file.using.lodash.js\"\n    ]\n  },\n  \"using\": {\n    \"react\": [\n      \"/path/to/my/project/file.using.react.jsx\",\n      \"/path/to/my/project/another.file.using.react.jsx\"\n    ],\n    \"lodash\": [\n      \"/path/to/my/project/file.using.lodash.js\"\n    ]\n  },\n  \"invalidFiles\": {\n    \"/path/to/my/project/file.having.syntax.error.js\": \"SyntaxError: <call stack here>\"\n  },\n  \"invalidDirs\": {\n    \"/path/to/my/project/folder/without/permission\": \"Error: EACCES, <call stack here>\"\n  }\n}\n```\n\n- The `dependencies`, `devDependencies` and `missing` properties have the same meanings in the previous example.\n- The `using` property is a lookup indicating each dependency is used by which files.\n- The value of `missing` and `using` lookup is an array. It means the dependency may be used by many files.\n- The `invalidFiles` property contains the files having syntax error or permission error. The value is the error details. However, only one error is stored in the lookup.\n- The `invalidDirs` property contains the directories having permission error. The value is the error details.\n\n## False Alert\n\nDepcheck just walks through all files and tries to find the dependencies according to some predefined rules. However, the predefined rules may not be enough or may even be wrong.\n\nThere may be some cases in which a dependency is being used but is reported as unused, or a dependency is not used but is reported as missing. These are *false alert* situations.\n\nIf you find that depcheck is reporting a false alert, please [open an issue](https://github.com/depcheck/depcheck/issues/new) with the following information to let us know:\n\n- The output from `depcheck --json` command. Beautified JSON is better.\n- Which dependencies are considered as false alert?\n- How are you using those dependencies, what do the files look like?\n\n## Changelog\n\nWe use the [GitHub release page](https://github.com/depcheck/depcheck/releases) to manage changelog.\n\n## License\n\nMIT License.\n",
+    "licenseText": "The MIT License (MIT)\n\nCopyright 2015 Djordje Lukic, Junle Li\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/depcheck/-/depcheck-0.8.4.tgz#4c1edff6fc22261938dd3dcff77ba1d2f3797100",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/depcheck/-/depcheck-0.8.4.tgz",
+    "hash": "4c1edff6fc22261938dd3dcff77ba1d2f3797100",
+    "registry": "npm",
+    "packageName": "depcheck"
+  },
+  "registry": "npm",
+  "hash": "4c1edff6fc22261938dd3dcff77ba1d2f3797100"
+}

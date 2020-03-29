@@ -1,0 +1,48 @@
+{
+  "manifest": {
+    "name": "hyper-solarized-dark-transparent",
+    "version": "0.1.2",
+    "description": "Semi transparent Hyper theme using the dark Solarized colors, based upon hyper-solarized-dark by ghosh",
+    "main": "index.js",
+    "keywords": [
+      "hyperterm",
+      "hyperterm-theme",
+      "hyper",
+      "hyper-theme",
+      "colors",
+      "theme",
+      "solarized",
+      "transparent"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/krisscox/hyper-solarized-dark.git"
+    },
+    "author": {
+      "name": "Kriss Cox"
+    },
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/krisscox/hyper-solarized-dark/issues"
+    },
+    "homepage": "https://github.com/krisscox/hyper-solarized-dark#readme",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "_registry": "npm",
+    "_loc": "/home/zero/.hyper_plugins/cache/v1/npm-hyper-solarized-dark-transparent-0.1.2-ad31d3d6c0f5de76e98ec059949bd4f57e8401e5/package.json",
+    "readmeFilename": "readme.md",
+    "readme": "#Solarized Dark theme for Hyper\n\nA modification to [Solarized Dark for Hyper](https://www.npmjs.com/package/hyper-solarized-dark) by ghosh, a port of the [Solarized Dark](http://ethanschoonover.com/solarized) theme for [Hyper.app](https://hyper.is)\n\n![Solarized Dark Hyper](https://dl.dropboxusercontent.com/u/29130579/hyperterm-solarized-dark.png)\n\n### Installation\n1. Open Hyper's preferences by pressing `Cmd + ,`.\n2. Find and Update the plugins array to include `hyper-solarized-dark`:  \n\n  ```js\n  plugins: [  \n    'hyper-solarized-dark'  \n  ],\n  ```\n\n3. Reload Hyper by pressing `Cmd + Shft + R`\n\n\n### Related\n- [Solarized Light Theme](https://github.com/Ghosh/hyper-solarized-light)\n\n```\nLicense - MIT\n```\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/hyper-solarized-dark-transparent/-/hyper-solarized-dark-transparent-0.1.2.tgz#ad31d3d6c0f5de76e98ec059949bd4f57e8401e5",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/hyper-solarized-dark-transparent/-/hyper-solarized-dark-transparent-0.1.2.tgz",
+    "hash": "ad31d3d6c0f5de76e98ec059949bd4f57e8401e5",
+    "registry": "npm",
+    "packageName": "hyper-solarized-dark-transparent"
+  },
+  "registry": "npm",
+  "hash": "ad31d3d6c0f5de76e98ec059949bd4f57e8401e5"
+}

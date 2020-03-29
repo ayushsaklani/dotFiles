@@ -1,0 +1,67 @@
+{
+  "manifest": {
+    "name": "deps-regex",
+    "description": "Regular expression for matching javascript require statements.",
+    "version": "0.1.4",
+    "homepage": "https://github.com/mathieudutour/deps-regex",
+    "author": {
+      "name": "Mathieu Dutour",
+      "email": "mathieu@dutour.me"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/mathieudutour/deps-regex.git"
+    },
+    "bugs": {
+      "url": "https://github.com/mathieudutour/deps-regex/issues"
+    },
+    "license": "MIT",
+    "files": [
+      "index.js"
+    ],
+    "main": "index.js",
+    "scripts": {
+      "test": "mocha"
+    },
+    "devDependencies": {
+      "mocha": "*",
+      "should": "*",
+      "eslint": "^1.6.0"
+    },
+    "keywords": [
+      "exec",
+      "expression",
+      "expressions",
+      "find",
+      "match",
+      "matcher",
+      "matches",
+      "matching",
+      "module",
+      "modules",
+      "re",
+      "regex",
+      "regexp",
+      "regular",
+      "require",
+      "requires",
+      "statement",
+      "test"
+    ],
+    "_registry": "npm",
+    "_loc": "/home/zero/.hyper_plugins/cache/v1/npm-deps-regex-0.1.4-518667b7691460a5e7e0a341be76eb7ce8090184/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# deps-regex\n\n> Regular expression for matching javascript require statements.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/)\n\n```sh\n$ npm i deps-regex --save\n```\n\n## Usage\n\n```js\nvar DepsRegex = require('deps-regex');\nvar re = new DepsRegex({\n  matchInternal: true,\n  matchES6: true,\n  matchCoffeescript: true\n})\n\nre.getDependencies('var foo = require(\\'bar\\');');\n//=>\n// [ 'bar']\n\n```\n\n## Running tests\n\nInstall dev dependencies:\n\n```sh\n$ npm i -d && npm test\n```\n\n## Contributing\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/mathieudutour/deps-regex/issues/new).\n\n## License\n\nReleased under the MIT license.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/deps-regex/-/deps-regex-0.1.4.tgz#518667b7691460a5e7e0a341be76eb7ce8090184",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/deps-regex/-/deps-regex-0.1.4.tgz",
+    "hash": "518667b7691460a5e7e0a341be76eb7ce8090184",
+    "registry": "npm",
+    "packageName": "deps-regex"
+  },
+  "registry": "npm",
+  "hash": "518667b7691460a5e7e0a341be76eb7ce8090184"
+}

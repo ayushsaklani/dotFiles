@@ -1,0 +1,47 @@
+{
+  "manifest": {
+    "name": "hyperterm-visor",
+    "version": "0.3.4",
+    "description": "Open your HyperTerm terminal from anywhere with a global hotkey.",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/cwspear/hyperterm-visor.git"
+    },
+    "author": {
+      "name": "Cameron Spear",
+      "email": "cameronspear@gmail.com",
+      "url": "cameronspear.com"
+    },
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"no tests\" && exit 0"
+    },
+    "license": "MIT",
+    "dependencies": {
+      "electron": "^1.6.5",
+      "electron-log": "^2.2.2",
+      "hyperterm-register-shortcut": "^1.2.0"
+    },
+    "keywords": [
+      "hyperterm",
+      "hyperterm-plugin",
+      "visor"
+    ],
+    "_registry": "npm",
+    "_loc": "/home/zero/.hyper_plugins/cache/v1/npm-hyperterm-visor-0.3.4-66418dea70c2e7e517ff778777ba0b7310a0c0d9/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# HyperTerm Visor\n\n[![Join the chat at https://gitter.im/CWSpear/hyperterm-visor](https://badges.gitter.im/CWSpear/hyperterm-visor.svg)](https://gitter.im/CWSpear/hyperterm-visor?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)\n\nOpen your [Hyper terminal](https://hyper.is/) from anywhere with a global hotkey.\n\n![HyperTerm Visor](https://cloud.githubusercontent.com/assets/495855/16907220/809ea6d0-4c76-11e6-956c-3329a0afc475.gif)\n\n## Installation\n\nIn your `~/.hyper.js`, add `hyperterm-visor` to the list of `plugins`.\n\n**Note:** I know I need to change the name, but I can't well and call it `hyper-visor`...\n\n## Config\n\nIn your `~/.hyper.js`, you can define your hotkey (required) and the position (optional) you want your visor to be. It automatically will open on the screen where your mouse is.\n\n```js\nmodules.exports = {\n  config: {\n    // other config...\n    visor: {\n      hotkey: 'CommandOrControl+Shift+Z',\n      position: 'top', // or left, right, bottom\n      width: 200, // Optional, defaults to half of viewable area for horizontal positions, 100% for vertical\n      height: 900, // Optional, defaults to half of viewable area for vertical positions, 100% for horizontal\n    },\n  },\n  // ...\n};\n```\n\nYou can define hotkeys as specified in the [Electron Accelerator docs](https://github.com/electron/electron/blob/master/docs/api/accelerator.md).\n\n## Roadmap\n\n* Better customization of where you can make the terminal appear.\n* Option to always open on a specific monitor, etc.\n* Double press mod keys to activate (i.e. hit Ctrl twice to activate).\n* Create window if all windows have been closed.\n\n## Caveats\n\n* It always uses the most recently open window as your visor window.\n* If all windows have been closed, it won't do anything until you manually open a new window.\n\nThis is pretty basic in its current form, and I'm labeling it as a beta as I use it and patch up edge cases, etc. I will build out more functionality and beef up this README as we go. \n\n## Changelog\n\nStarting with version `0.3.0`, I have been documenting changes via GitHub's [release tab](https://github.com/CWSpear/hyperterm-visor/releases).\n",
+    "licenseText": "MIT License\n\nCopyright (c) 2017 Cameron Spear\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/hyperterm-visor/-/hyperterm-visor-0.3.4.tgz#66418dea70c2e7e517ff778777ba0b7310a0c0d9",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/hyperterm-visor/-/hyperterm-visor-0.3.4.tgz",
+    "hash": "66418dea70c2e7e517ff778777ba0b7310a0c0d9",
+    "registry": "npm",
+    "packageName": "hyperterm-visor"
+  },
+  "registry": "npm",
+  "hash": "66418dea70c2e7e517ff778777ba0b7310a0c0d9"
+}

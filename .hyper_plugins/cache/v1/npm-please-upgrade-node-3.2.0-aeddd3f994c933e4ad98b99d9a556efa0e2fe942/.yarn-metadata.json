@@ -1,0 +1,66 @@
+{
+  "manifest": {
+    "name": "please-upgrade-node",
+    "version": "3.2.0",
+    "description": "Displays a beginner-friendly message telling your user to upgrade their version of Node",
+    "main": "index.js",
+    "scripts": {
+      "test": "node test",
+      "lint": "eslint .",
+      "fix": "npm run lint -- --fix",
+      "prepublishOnly": "npm test && npm run lint && pkg-ok"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/typicode/please-upgrade-node.git"
+    },
+    "keywords": [
+      "node",
+      "engines",
+      "version",
+      "check",
+      "verify",
+      "upgrade"
+    ],
+    "author": {
+      "name": "typicode"
+    },
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/typicode/please-upgrade-node/issues"
+    },
+    "homepage": "https://github.com/typicode/please-upgrade-node#readme",
+    "devDependencies": {
+      "eslint": "^4.19.1",
+      "eslint-plugin-prettier": "^2.6.0",
+      "husky": "^1.0.0-rc.12",
+      "pkg-ok": "^1.1.0",
+      "prettier": "1.12.1",
+      "tape": "^4.9.1"
+    },
+    "dependencies": {
+      "semver-compare": "^1.0.0"
+    },
+    "husky": {
+      "hooks": {
+        "pre-commit": "npm test && npm run lint"
+      }
+    },
+    "_registry": "npm",
+    "_loc": "/home/zero/.hyper_plugins/cache/v1/npm-please-upgrade-node-3.2.0-aeddd3f994c933e4ad98b99d9a556efa0e2fe942/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# Please upgrade Node [![](http://img.shields.io/npm/dm/please-upgrade-node.svg?style=flat)](https://www.npmjs.org/package/please-upgrade-node) [![Build Status](https://travis-ci.org/typicode/please-upgrade-node.svg?branch=master)](https://travis-ci.org/typicode/please-upgrade-node) [![npm](https://img.shields.io/npm/v/please-upgrade-node.svg)](https://www.npmjs.com/package/please-upgrade-node)\n\n> :information_desk_person: show a message to your users to upgrade Node instead of a stacktrace \n\nIt's common for new Node users to miss or not understand engines warning when installing a CLI. This package displays a beginner-friendly message if their Node version is below the one expected.\n\n```sh\n$ node -v\n0.12\n\n$ modern-cli\nmodern-cli requires at least version 6 of Node, please upgrade\n```\n\n## Support\n\nIf you like this project, you can support me on [GitHub Sponsors](https://github.com/users/typicode/sponsorship)\n\n## Usage\n\n```sh\nnpm install please-upgrade-node\n```\n\nAdd `please-upgrade-node` at the top of your CLI\n\n```js\n#!/usr/bin/env node\nconst pkg = require('./package.json')\nrequire('please-upgrade-node')(pkg) // <- Must run BEFORE requiring any other modules\n\n// ...\n```\n\nSet in your `package.json` the required Node version\n\n```js\n{\n  \"engines\": {\n    \"node\": \">=6\"\n  }\n}\n```\n\n__Important__: `>=` is the only operator supported by `please-upgrade-node` (e.g. `>=6`, `>=6.0`, `>=6.0.0`).\n\n## Options\n\nYou can set custom `exitCode` and `message` function if needed\n\n```js\npleaseUpgradeNode(pkg, {\n  exitCode: 0, // Default: 1\n  message: function(requiredVersion) {\n    return 'Oops this program require Node ' +  requiredVersion\n  }\n})\n```\n\n__Important__: to keep `message` function compatible with older versions of Node, avoid using ES6 features like `=>` or string interpolation.\n\n## See also\n\n* [pkg-ok](https://github.com/typicode/pkg-ok) - :ok_hand: Prevents publishing a module with bad paths\n* [husky](https://github.com/typicode/husky) - :dog: Git hooks made easy\n* [update-notifier](https://github.com/yeoman/update-notifier) - Update notifications for your CLI app \n\nThanks to [zeit/serve](https://github.com/zeit/serve) for the error message inspiration.\n\n## License\n\nMIT - [Typicode :cactus:](https://github.com/typicode) - [Patreon](https://patreon.com/typicode)\n",
+    "licenseText": "MIT License\n\nCopyright (c) 2017 \n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/please-upgrade-node/-/please-upgrade-node-3.2.0.tgz#aeddd3f994c933e4ad98b99d9a556efa0e2fe942",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/please-upgrade-node/-/please-upgrade-node-3.2.0.tgz",
+    "hash": "aeddd3f994c933e4ad98b99d9a556efa0e2fe942",
+    "registry": "npm",
+    "packageName": "please-upgrade-node"
+  },
+  "registry": "npm",
+  "hash": "aeddd3f994c933e4ad98b99d9a556efa0e2fe942"
+}

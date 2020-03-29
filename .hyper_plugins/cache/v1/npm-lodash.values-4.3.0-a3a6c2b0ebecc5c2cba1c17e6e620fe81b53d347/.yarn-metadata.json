@@ -1,0 +1,17 @@
+{
+  "manifest": {
+    "name": "lodash.values",
+    "version": "4.3.0"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/lodash.values/-/lodash.values-4.3.0.tgz#a3a6c2b0ebecc5c2cba1c17e6e620fe81b53d347",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/lodash.values/-/lodash.values-4.3.0.tgz",
+    "hash": "a3a6c2b0ebecc5c2cba1c17e6e620fe81b53d347",
+    "registry": "npm",
+    "packageName": "lodash.values"
+  },
+  "registry": "npm",
+  "hash": "a3a6c2b0ebecc5c2cba1c17e6e620fe81b53d347"
+}

@@ -1,0 +1,35 @@
+{
+  "manifest": {
+    "name": "hyper-city-lights",
+    "version": "1.0.0",
+    "description": "Hyper theme with City Lights syntax",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+      "hyper",
+      "theme",
+      "city-lights"
+    ],
+    "author": {
+      "name": "mmcbride1007@gmail.com"
+    },
+    "license": "MIT",
+    "_registry": "npm",
+    "_loc": "/home/zero/.hyper_plugins/cache/v1/npm-hyper-city-lights-1.0.0-7711c9b9ca0cb9dbb95b80a3e69a005784a83178/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# hyper-city-lights\n\nA Hyper theme based on the [City Lights](http://citylights.xyz) syntax.\n\n## Usage\n\nAdd it to the `plugins` array in your `.hyper.js`:\n\n```js\nplugins: [\n  'hyper-city-lights'\n]\n```\n\nEnjoy!"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/hyper-city-lights/-/hyper-city-lights-1.0.0.tgz#7711c9b9ca0cb9dbb95b80a3e69a005784a83178",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/hyper-city-lights/-/hyper-city-lights-1.0.0.tgz",
+    "hash": "7711c9b9ca0cb9dbb95b80a3e69a005784a83178",
+    "registry": "npm",
+    "packageName": "hyper-city-lights"
+  },
+  "registry": "npm",
+  "hash": "7711c9b9ca0cb9dbb95b80a3e69a005784a83178"
+}

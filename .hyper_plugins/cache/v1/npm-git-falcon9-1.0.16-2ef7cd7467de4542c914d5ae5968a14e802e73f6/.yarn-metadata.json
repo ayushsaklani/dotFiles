@@ -1,0 +1,84 @@
+{
+  "manifest": {
+    "name": "git-falcon9",
+    "version": "1.0.16",
+    "description": "Falcon9 Rocket launches and lands in Hyper terminal when pushing and pulling with Git",
+    "main": "dist/index.js",
+    "files": [
+      "dist/index.js",
+      "dist/index.js.map"
+    ],
+    "scripts": {
+      "build": "webpack --mode production",
+      "dev": "webpack --mode development --watch",
+      "lint": "eslint --ext .jsx --ext .js src/ --ignore-path .gitignore; exit 0",
+      "fix": "eslint --ext .jsx --ext .js src/ --ignore-path .gitignore --fix; exit 0"
+    },
+    "author": {
+      "name": "Brian Ishii"
+    },
+    "license": "MIT",
+    "keyword": [
+      "hyper",
+      "hyper.app",
+      "hyperapp",
+      "hyperterm",
+      "terminal",
+      "rocket",
+      "ship",
+      "animation"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/brianishii/git-falcon9.git"
+    },
+    "bugs": {
+      "url": "https://github.com/BrianIshii/git-falcon9"
+    },
+    "dependencies": {
+      "@babel/runtime": "^7.6.3",
+      "babel-eslint": "^10.0.1",
+      "depcheck": "^0.8.3",
+      "path": "^0.12.7",
+      "prop-types": "^15.7.2",
+      "styled-components": "^3.4.10",
+      "react": "^16.10.2",
+      "react-dom": "^16.10.2"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.6.3",
+      "@babel/preset-env": "^7.6.3",
+      "@babel/preset-react": "^7.6.3",
+      "babel-loader": "^8.0.6",
+      "eslint": "^5.15.3",
+      "eslint-config-airbnb": "^17.1.0",
+      "eslint-config-standard": "^12.0.0",
+      "eslint-plugin-import": "^2.17.2",
+      "eslint-plugin-jsx-a11y": "^6.2.1",
+      "eslint-plugin-node": "^9.0.1",
+      "eslint-plugin-promise": "^4.2.1",
+      "eslint-plugin-react": "^7.16.0",
+      "eslint-plugin-react-native": "^3.6.0",
+      "eslint-plugin-standard": "^4.0.1",
+      "webpack": "^4.31.0",
+      "webpack-cli": "^3.3.2",
+      "webpack-node-externals": "^1.7.2"
+    },
+    "_registry": "npm",
+    "_loc": "/home/zero/.hyper_plugins/cache/v1/npm-git-falcon9-1.0.16-2ef7cd7467de4542c914d5ae5968a14e802e73f6/package.json",
+    "readmeFilename": "README.md",
+    "readme": "[![Build Status](https://travis-ci.org/BrianIshii/git-falcon9.svg?branch=master)](https://travis-ci.org/BrianIshii/git-falcon9)\n\n# git-falcon9\nThis is a plugin for the [Hyper](https://hyper.is/) terminal that launches a Falcon 9 when you push code and lands when you pull code with Git.\n\n![Alt Text](https://github.com/BrianIshii/git-falcon9/raw/master/Assets/falcon9launch.gif)\n![Alt Text](https://github.com/BrianIshii/git-falcon9/raw/master/Assets/falcon9pull.gif)\n\n### Installation\nTo use this plugin, first install the plugin in your `~/.hyper_plugins`\nfolder.\n```\n$ cd ~/.hyper_plugins\n$ npm install git-falcon9\n```\nThen, add the plugin's name in your `~/.hyper.js` file as an item in the\n`plugins` array.\n```\nplugins: [\n  \"git-falcon9\"\n],\n```\nAfterwards, refresh your Hyper terminal with _View > Full Reload_.\n\nIf this does not work, restarting your Hyper Terminal might help.\n\nInspired by [gitrocket](https://github.com/bomanimc/gitrocket), [space-pull](https://github.com/lukaszromerowicz/space-pull) and [SpaceX Falcon 9 Landing CSS](https://codepen.io/simoberny/pen/PEJxPQ)\n\n#### Special launch for very large commits\nThe max payload for a Falcon 9 is 22.8kB.\nCommits larger than 22.8kB may require something special.\n\n![Alt Text](https://github.com/BrianIshii/git-falcon9/raw/master/Assets/falconHeavyLaunch.gif)\n",
+    "licenseText": "\nThe MIT License (MIT)\n\nCopyright (c) 2018 Brian Ishii\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/git-falcon9/-/git-falcon9-1.0.16.tgz#2ef7cd7467de4542c914d5ae5968a14e802e73f6",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/git-falcon9/-/git-falcon9-1.0.16.tgz",
+    "hash": "2ef7cd7467de4542c914d5ae5968a14e802e73f6",
+    "registry": "npm",
+    "packageName": "git-falcon9"
+  },
+  "registry": "npm",
+  "hash": "2ef7cd7467de4542c914d5ae5968a14e802e73f6"
+}

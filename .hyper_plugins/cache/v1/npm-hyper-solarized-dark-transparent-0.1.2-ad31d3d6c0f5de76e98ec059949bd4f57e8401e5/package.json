@@ -1,0 +1,29 @@
+{
+  "name": "hyper-solarized-dark-transparent",
+  "version": "0.1.2",
+  "description": "Semi transparent Hyper theme using the dark Solarized colors, based upon hyper-solarized-dark by ghosh",
+  "main": "index.js",
+  "keywords": [
+    "hyperterm",
+    "hyperterm-theme",
+    "hyper",
+    "hyper-theme",
+    "colors",
+    "theme",
+    "solarized",
+    "transparent"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krisscox/hyper-solarized-dark.git"
+  },
+  "author": "Kriss Cox",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krisscox/hyper-solarized-dark/issues"
+  },
+  "homepage": "https://github.com/krisscox/hyper-solarized-dark#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

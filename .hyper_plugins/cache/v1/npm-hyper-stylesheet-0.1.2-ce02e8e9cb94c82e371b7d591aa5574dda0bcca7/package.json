@@ -1,0 +1,39 @@
+{
+  "name": "hyper-stylesheet",
+  "version": "0.1.2",
+  "description": "Adds support for an external hyper stylesheet",
+  "main": "dist/bundle.js",
+  "author": "Chris Deacy <chrisdothtml@gmail.com>",
+  "repository": "github:chrisdothtml/hyper-stylesheet",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "lint": "standard '**/*.js' --verbose | snazzy"
+  },
+  "dependencies": {
+    "gaze": "^1.1.2",
+    "open": "0.0.5",
+    "pfs": "^2.1.2"
+  },
+  "devDependencies": {
+    "rollup": "^0.55.3",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-string": "^2.0.2",
+    "snazzy": "^7.0.0",
+    "standard": "^8.4.0"
+  },
+  "standard": {
+    "ignore": [
+      "dist"
+    ]
+  },
+  "keywords": [
+    "css",
+    "external",
+    "hyper",
+    "hyper.app",
+    "hyperterm",
+    "stylesheet",
+    "terminal"
+  ]
+}

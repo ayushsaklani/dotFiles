@@ -1,0 +1,98 @@
+{
+  "manifest": {
+    "name": "dbus-native",
+    "author": {
+      "name": "Andrey Sidorov",
+      "email": "sidorares@yandex.com"
+    },
+    "version": "0.2.5",
+    "keywords": [
+      "dbus",
+      "dcop",
+      "d-bus",
+      "rpc",
+      "gnome",
+      "kde"
+    ],
+    "description": "D-bus protocol implementation in native javascript",
+    "main": "index.js",
+    "maintainers": [
+      {
+        "name": "Andrey Sidorov",
+        "email": "sidoares@yandex.ru"
+      }
+    ],
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "http://github.com/sidorares/node-dbus.git"
+    },
+    "bin": {
+      "dbus2js": "./bin/dbus2js.js"
+    },
+    "dependencies": {
+      "event-stream": "^3.1.7",
+      "hexy": "^0.2.10",
+      "long": "^3.0.1",
+      "optimist": "^0.6.1",
+      "put": "0.0.6",
+      "safe-buffer": "^5.1.1",
+      "xml2js": "0.1.14"
+    },
+    "optionalDependencies": {
+      "abstract-socket": "^2.0.0"
+    },
+    "devDependencies": {
+      "eslint": "^4.8.0",
+      "eslint-config-prettier": "^2.6.0",
+      "eslint-plugin-markdown": "^1.0.0-beta.6",
+      "eslint-plugin-prettier": "^2.3.1",
+      "husky": "^0.14.3",
+      "lint-staged": "^5.0.0",
+      "mocha": "*",
+      "prettier": "^1.7.4"
+    },
+    "scripts": {
+      "lint": "npm run lint:docs && npm run lint:code",
+      "lint:code": "eslint index.js 'bin/*.js' 'lib/**/*.js' 'test/**/*.js'",
+      "lint:docs": "eslint 'examples/**/*.js'",
+      "test": "npm run lint && npm run test:raw",
+      "test:raw": "mocha",
+      "prettier": "prettier --write index.js '{bin,lib,examples,test}/**/*.js'",
+      "prettier:docs": "prettier-markdown README.md",
+      "eslint-check": "eslint --print-config .eslintrc | eslint-config-prettier-check",
+      "precommit": "lint-staged",
+      "prepublish": "npm prune"
+    },
+    "lint-staged": {
+      "*.js": [
+        "prettier --write",
+        "git add"
+      ]
+    },
+    "prettier": {
+      "semi": true,
+      "singleQuote": true,
+      "trailingComma": "none"
+    },
+    "engine": {
+      "node": ">=4.0"
+    },
+    "_registry": "npm",
+    "_loc": "/home/zero/.hyper_plugins/cache/v1/npm-dbus-native-0.2.5-914056f9689e2779e621c2ab8f7d2347ea607dc3/package.json",
+    "readmeFilename": "README.md",
+    "readme": "node-dbus\n===========\n\n[![Greenkeeper badge](https://badges.greenkeeper.io/sidorares/dbus-native.svg)](https://greenkeeper.io/)\nD-bus protocol client and server for node.js\n\n[![Build Status](https://secure.travis-ci.org/sidorares/dbus-native.png)](http://travis-ci.org/sidorares/dbus-native)\n\nInstallation\n------------\n\n```shell\nnpm install dbus-native\n```\nor\n\n```shell\ngit clone https://github.com/sidorares/node-dbus # clone the repo\ncd node-dbus\nnpm install # install dependencies\nsudo cp examples/com.github.sidorares.dbus.Example.conf /etc/dbus-1/system.d/ # if you want to test examples/service.js\n```\n\nUsage\n------\n\nShort example using desktop notifications service\n\n```js\nvar dbus = require('dbus-native');\nvar sessionBus = dbus.sessionBus();\nsessionBus.getService('org.freedesktop.Notifications').getInterface(\n    '/org/freedesktop/Notifications',\n    'org.freedesktop.Notifications', function(err, notifications) {\n\n    // dbus signals are EventEmitter events\n    notifications.on('ActionInvoked', function() {\n        console.log('ActionInvoked', arguments);\n    });\n    notifications.on('NotificationClosed', function() {\n        console.log('NotificationClosed', arguments);\n    });\n    notifications.Notify('exampl', 0, '', 'summary 3', 'new message text', ['xxx yyy', 'test2', 'test3', 'test4'], [],  5, function(err, id) {\n       //setTimeout(function() { n.CloseNotification(id, console.log); }, 4000);\n    });\n});\n```\n\nAPI\n---\n\n### Low level messaging: bus connection\n\n`connection = dbus.createClient(options)`\n\noptions:\n   - socket - unix socket path\n   - port - TCP port\n   - host - TCP host\n   - busAddress - encoded bus address. Default is `DBUS_SESSION_BUS_ADDRESS` environment variable. See http://dbus.freedesktop.org/doc/dbus-specification.html#addresses\n   - authMethods - array of authentication methods, which are attempted in the order provided (default:['EXTERNAL', 'DBUS_COOKIE_SHA1', 'ANONYMOUS'])\n   - ayBuffer - boolean (default:true): if true 'ay' dbus fields are returned as buffers\n   - ReturnLongjs - boolean (default:false): if true 64 bit dbus fields (x/t) are read out as Long.js objects, otherwise they are converted to numbers (which should be good up to 53 bits)\n   - ( TODO: add/document option to use adress from X11 session )\n\nconnection has only one method, `message(msg)`\n\nmessage fields:\n   - type - methodCall, methodReturn, error or signal\n   - path - object path\n   - interface\n   - destination\n   - sender\n   - member\n   - serial\n   - signature\n   - body\n   - errorName\n   - replySerial\n\nconnection signals:\n   - connect - emitted after successful authentication\n   - message\n   - error\n\nexample:\n\n```js\nvar dbus = require('dbus-native');\nvar conn = dbus.createConnection();\nconn.message({\n    path:'/org/freedesktop/DBus',\n    destination: 'org.freedesktop.DBus',\n    'interface': 'org.freedesktop.DBus',\n    member: 'Hello',\n    type: dbus.messageType.methodCall\n});\nconn.on('message', function(msg) { console.log(msg); });\n```\n\n### Note on INT64 'x' and UINT64 't'\nLong.js is used for 64 Bit support. https://github.com/dcodeIO/long.js\nThe following javascript types can be marshalled into 64 bit dbus fields:\n   - typeof 'number' up to 53bits\n   - typeof 'string' (consisting of decimal digits with no separators or '0x' prefixed hexadecimal) up to full 64bit range\n   - Long.js objects (or object with compatible properties)\n\nBy default 64 bit dbus fields are unmarshalled into a 'number' (with precision loss beyond 53 bits). Use {ReturnLongjs:true} option to return the actual Long.js object and preserve the entire 64 bits.\n\n### Links\n   - http://cgit.freedesktop.org/dbus - freedesktop reference C library\n   - https://github.com/guelfey/go.dbus\n   - https://github.com/Shouqun/node-dbus - libdbus\n   - https://github.com/Motorola-Mobility/node-dbus - libdbus\n   - https://github.com/izaakschroeder/node-dbus - libdbus\n   - https://github.com/agnat/node_libdbus\n   - https://github.com/agnat/node_dbus - native js\n   - https://github.com/cocagne/txdbus - native python + twisted\n   - http://search.cpan.org/~danberr/Net-DBus-1.0.0/ (seems to be native, but requires libdbus?)\n   - https://github.com/mvidner/ruby-dbus (native, sync)\n   - http://www.ndesk.org/DBusSharp (C#/Mono)\n   - https://github.com/lizenn/erlang-dbus/ - erlang\n   - https://github.com/mspanc/dbux/ - elixir\n   - http://0pointer.net/blog/the-new-sd-bus-api-of-systemd.html - Blog post about sb-bus and D-Bus in general\n",
+    "licenseText": "This software is released under the MIT license:\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/dbus-native/-/dbus-native-0.2.5.tgz#914056f9689e2779e621c2ab8f7d2347ea607dc3",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/dbus-native/-/dbus-native-0.2.5.tgz",
+    "hash": "914056f9689e2779e621c2ab8f7d2347ea607dc3",
+    "registry": "npm",
+    "packageName": "dbus-native"
+  },
+  "registry": "npm",
+  "hash": "914056f9689e2779e621c2ab8f7d2347ea607dc3"
+}

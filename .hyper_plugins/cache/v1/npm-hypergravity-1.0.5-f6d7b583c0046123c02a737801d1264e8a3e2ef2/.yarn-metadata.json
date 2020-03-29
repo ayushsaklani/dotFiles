@@ -1,0 +1,47 @@
+{
+  "manifest": {
+    "name": "hypergravity",
+    "description": "Extension for Hyper terminal to add some fancy physics to your text!",
+    "version": "1.0.5",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/krzema12/hypergravity.git"
+    },
+    "keywords": [
+      "hyper",
+      "hyper.app",
+      "hyper-plugin",
+      "gravity"
+    ],
+    "scripts": {
+      "build": "npx webpack",
+      "prepublish": "yarn build"
+    },
+    "dependencies": {
+      "matter-js": "^0.14.0"
+    },
+    "devDependencies": {
+      "babel-core": "^6.26.0",
+      "babel-loader": "^7.1.2",
+      "babel-preset-env": "^1.6.1",
+      "webpack": "^3.10.0"
+    },
+    "_registry": "npm",
+    "_loc": "/home/zero/.hyper_plugins/cache/v1/npm-hypergravity-1.0.5-f6d7b583c0046123c02a737801d1264e8a3e2ef2/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# Hypergravity - gravity simulation in Hyper terminal\n\n![Animated demo](https://user-images.githubusercontent.com/3110813/35337934-d11d8afc-011c-11e8-9131-6c0bf23ec669.gif)\n\n## How to install and use it\n\n1. Open `~/.hyper.js` and add `hypergravity` in the proper place:\n```js\n  plugins: [\n    // some other plugins\n    'hypergravity'\n  ],\n```\n2. Run Hyper and press `Command + G` (or `Control + G` on Linux and Windows) to toggle gravity mode!\n\n## How to run it for development\n\n1. Clone the repo to `~/.hyper_plugins/local/hypergravity`\n2. Go to `hypergravity` folder.\n3. Run `yarn` to install the dependencies.\n4. Add this to your `.hyper.js`:\n```js\n  localPlugins: [\n    // maybe some other local plugins\n    'hypergravity'\n  ],\n```\n5. At the beginning and after each change in source files, run `yarn build` to (re)build `index.js` which is in fact loaded by Hyper.\n",
+    "licenseText": "MIT License\n\nCopyright (c) 2017 Piotr Krzeminski\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/hypergravity/-/hypergravity-1.0.5.tgz#f6d7b583c0046123c02a737801d1264e8a3e2ef2",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/hypergravity/-/hypergravity-1.0.5.tgz",
+    "hash": "f6d7b583c0046123c02a737801d1264e8a3e2ef2",
+    "registry": "npm",
+    "packageName": "hypergravity"
+  },
+  "registry": "npm",
+  "hash": "f6d7b583c0046123c02a737801d1264e8a3e2ef2"
+}

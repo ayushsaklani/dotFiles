@@ -1,0 +1,87 @@
+{
+  "manifest": {
+    "name": "@panz3r/spotify-js",
+    "version": "1.0.0-alpha.6",
+    "description": "A module to interact with local running Spotify client using a simple API",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/panz3r/spotify-js.git"
+    },
+    "keywords": [
+      "spotify",
+      "node"
+    ],
+    "author": {
+      "name": "Mattia Panzeri",
+      "email": "mattia.panzeri93@gmail.com",
+      "url": "https://github.com/panz3r"
+    },
+    "license": "MIT",
+    "publishConfig": {
+      "access": "public"
+    },
+    "bugs": {
+      "url": "https://github.com/panz3r/spotify-js/issues"
+    },
+    "homepage": "https://github.com/panz3r/spotify-js#readme",
+    "main": "dist/index.js",
+    "module": "dist/spotify-js.esm.js",
+    "typings": "dist/index.d.ts",
+    "files": [
+      "dist"
+    ],
+    "scripts": {
+      "start": "tsdx watch",
+      "prebuild": "rimraf ./dist",
+      "build": "tsdx build",
+      "test": "tsdx test",
+      "lint": "tsdx lint",
+      "prepublish": "yarn build"
+    },
+    "devDependencies": {
+      "@types/jest": "^24.0.23",
+      "@types/lodash": "^4.14.148",
+      "@types/spotify-node-applescript": "^1.1.0",
+      "husky": "^3.0.9",
+      "rimraf": "^3.0.0",
+      "tsdx": "^0.11.0",
+      "tslib": "^1.10.0",
+      "typescript": "^3.7.2"
+    },
+    "dependencies": {
+      "dbus-next": "^0.7.1",
+      "lodash": "^4.17.15",
+      "lodash-es": "^4.17.15",
+      "open": "^7.0.0",
+      "spotify-node-applescript": "^1.1.1"
+    },
+    "peerDependencies": {},
+    "husky": {
+      "hooks": {
+        "pre-commit": "tsdx lint"
+      }
+    },
+    "prettier": {
+      "printWidth": 80,
+      "semi": true,
+      "singleQuote": true,
+      "trailingComma": "es5"
+    },
+    "_registry": "npm",
+    "_loc": "/home/zero/.hyper_plugins/cache/v1/npm-@panz3r/spotify-js-1.0.0-alpha.6-357feaa4f5ebcc6c91b5ff5a0c5be9498833cd8c/package.json",
+    "readmeFilename": "README.md",
+    "readme": "# SpotifyJS\n\n> A module to interact with local running Spotify client using a simple API\n\n## Installation\n\n```bash\nyarn add @panz3r/spotify-js\n```\n\n## Usage\n\n\n\n## Local Development\n\nThis project was bootstrapped with [TSDX](https://github.com/jaredpalmer/tsdx).\n\nBelow is a list of commands you will probably find useful.\n\n### `npm start` or `yarn start`\n\nRuns the project in development/watch mode. Your project will be rebuilt upon changes. TSDX has a special logger for you convenience. Error messages are pretty printed and formatted for compatibility VS Code's Problems tab.\n\n<img src=\"https://user-images.githubusercontent.com/4060187/52168303-574d3a00-26f6-11e9-9f3b-71dbec9ebfcb.gif\" width=\"600\" />\n\nYour library will be rebuilt if you make edits.\n\n### `npm run build` or `yarn build`\n\nBundles the package to the `dist` folder.\nThe package is optimized and bundled with Rollup into multiple formats (CommonJS, UMD, and ES Module).\n\n<img src=\"https://user-images.githubusercontent.com/4060187/52168322-a98e5b00-26f6-11e9-8cf6-222d716b75ef.gif\" width=\"600\" />\n\n### `npm test` or `yarn test`\n\nRuns the test watcher (Jest) in an interactive mode.\nBy default, runs tests related to files changed since the last commit.\n",
+    "licenseText": "MIT License\n\nCopyright (c) 2019 Mattia Panzeri\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/@panz3r/spotify-js/-/spotify-js-1.0.0-alpha.6.tgz#357feaa4f5ebcc6c91b5ff5a0c5be9498833cd8c",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/@panz3r/spotify-js/-/spotify-js-1.0.0-alpha.6.tgz",
+    "hash": "357feaa4f5ebcc6c91b5ff5a0c5be9498833cd8c",
+    "registry": "npm",
+    "packageName": "@panz3r/spotify-js"
+  },
+  "registry": "npm",
+  "hash": "357feaa4f5ebcc6c91b5ff5a0c5be9498833cd8c"
+}

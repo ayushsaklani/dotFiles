@@ -1,0 +1,63 @@
+{
+  "manifest": {
+    "name": "hyper-stylesheet",
+    "version": "0.1.2",
+    "description": "Adds support for an external hyper stylesheet",
+    "main": "dist/bundle.js",
+    "author": {
+      "name": "Chris Deacy",
+      "email": "chrisdothtml@gmail.com"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/chrisdothtml/hyper-stylesheet.git"
+    },
+    "license": "MIT",
+    "scripts": {
+      "build": "rollup -c",
+      "lint": "standard '**/*.js' --verbose | snazzy"
+    },
+    "dependencies": {
+      "gaze": "^1.1.2",
+      "open": "0.0.5",
+      "pfs": "^2.1.2"
+    },
+    "devDependencies": {
+      "rollup": "^0.55.3",
+      "rollup-plugin-json": "^2.3.0",
+      "rollup-plugin-string": "^2.0.2",
+      "snazzy": "^7.0.0",
+      "standard": "^8.4.0"
+    },
+    "standard": {
+      "ignore": [
+        "dist"
+      ]
+    },
+    "keywords": [
+      "css",
+      "external",
+      "hyper",
+      "hyper.app",
+      "hyperterm",
+      "stylesheet",
+      "terminal"
+    ],
+    "_registry": "npm",
+    "_loc": "/home/zero/.hyper_plugins/cache/v1/npm-hyper-stylesheet-0.1.2-ce02e8e9cb94c82e371b7d591aa5574dda0bcca7/package.json",
+    "readmeFilename": "README.md",
+    "readme": "![Screenshot](https://raw.githubusercontent.com/chrisdothtml/hyper-stylesheet/master/img/screenshot.gif)\n\n# hyper-stylesheet\n\n[![npm version](https://img.shields.io/npm/v/hyper-stylesheet.svg)](https://www.npmjs.com/package/hyper-stylesheet)\n[![StandardJS](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)\n\n> Adds support for an external [hyper](https://hyper.is) stylesheet\n\n## Install\n\nAdd to the `plugins` array in your `.hyper.js`:\n\n```javascript\nplugins: [\n  'hyper-stylesheet'\n]\n```\n\n**Note**: if you want your CSS to override all other plugins, it must be the last item in the array\n\n## Use\n\nOpen your `.hyper.css` file from the menu via `Hyper > Stylesheet...` (`Edit > Stylseheet...` if you're on windows). You can define the `css` and/or `termCSS` properties with the following indicators:\n\n```css\n/* #css */\n.some-class {\n  font-size: 20px;\n}\n\n/* #termCSS */\n.some-class {\n  color: #000;\n}\n```\n\n`#css`/`#termCSS` are interchangeable with `#window`/`#terminal`. If no indicators are provided, the `css` property will be used\n\n## Options\n\nTo provide options, add `hyper-stylesheet` to your `.hyper.js` config:\n\n```javascript\nmodule.exports = {\n  config: {\n    'hyper-stylesheet': {\n      autoReload: false\n    }\n  },\n  plugins: [\n    'hyper-stylesheet'\n  ]\n}\n```\n\n### autoReload\n\nType: `boolean`\n\nDefault: `true`\n\nUpon saving `.hyper.css`, your terminal will auto-reload to show the changes\n\n## License\n\n[MIT](LICENSE)\n",
+    "licenseText": "MIT License\n\nCopyright (c) 2018 Chris Deacy\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/hyper-stylesheet/-/hyper-stylesheet-0.1.2.tgz#ce02e8e9cb94c82e371b7d591aa5574dda0bcca7",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/hyper-stylesheet/-/hyper-stylesheet-0.1.2.tgz",
+    "hash": "ce02e8e9cb94c82e371b7d591aa5574dda0bcca7",
+    "registry": "npm",
+    "packageName": "hyper-stylesheet"
+  },
+  "registry": "npm",
+  "hash": "ce02e8e9cb94c82e371b7d591aa5574dda0bcca7"
+}

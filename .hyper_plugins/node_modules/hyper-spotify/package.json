@@ -1,0 +1,56 @@
+{
+  "name": "hyper-spotify",
+  "version": "5.3.1",
+  "description": "Add a Spotify controller to Hyper.",
+  "keywords": [
+    "hyperterm",
+    "hyper",
+    "spotify",
+    "hyper-spotify"
+  ],
+  "os": [
+    "!win32"
+  ],
+  "author": "Mattia Panzeri <mattia.panzeri93@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/panz3r/hyper-spotify"
+  },
+  "bugs": {
+    "url": "https://github.com/panz3r/hyper-spotify/issues"
+  },
+  "homepage": "https://github.com/panz3r/hyper-spotify#readme",
+  "main": "index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "prebuild": "yarn lint && rimraf ./dist",
+    "build": "babel ./src --out-dir ./dist --copy-files",
+    "build:watch": "babel --watch ./src --out-dir ./dist --source-maps --copy-files",
+    "prepublishOnly": "yarn build"
+  },
+  "dependencies": {
+    "@babel/runtime-corejs2": "^7.7.2",
+    "@panz3r/spotify-js": "^1.0.0-alpha.6",
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-react": "^7.7.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "6.6.0",
+    "eslint-config-prettier": "6.5.0",
+    "eslint-plugin-prettier": "3.1.1",
+    "eslint-plugin-react": "7.16.0",
+    "prettier": "1.19.1",
+    "rimraf": "^3.0.0"
+  }
+}
